@@ -42,6 +42,24 @@ public function get_list() {
 
             $this->get_list();
         }
+
+        
+        public function update_course($id, $course_code, $course_name, $progression, $syllabus ) {
+            $sql = "UPDATE courses SET course_code = '$course_code', course_name = '$course_name', progression = '$progression', syllabus = '$syllabus' WHERE id =$id";
+            
+            $this->db->query($sql);
+
+            $this->get_list();
+        }
+
+       
+          public function delete_course($id) {
+            $sql = "DELETE FROM courses WHERE id = '$id'";
+            
+            $this->db->query($sql);
+
+            $this->get_list();
+        }
 }
 
 

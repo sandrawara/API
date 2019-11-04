@@ -24,6 +24,13 @@ switch ($method){
         $obj->create_course($input['id'], $input['course_code'], $input['course_name'], $input['progression'], $input['syllabus']);    
         break;
 
+    case "PUT":
+        $obj->update_course($input['id'], $input['course_code'], $input['course_name'], $input['progression'], $input['syllabus']);
+        break;
+
+    case "DELETE":
+        $obj->delete_course($input['id']);
+
 }
 
 ?>
